@@ -7,12 +7,9 @@ use App\Models\Product;
 use App\Models\Supplier;
 use App\Models\Order;
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 // Routes for Products with Model Binding
-Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+Route::get('/', [ProductController::class, 'index'])->name('products.index');
 Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
 Route::post('/products', [ProductController::class, 'store'])->name('products.store');
 Route::get('/products/{product}', [ProductController::class, 'show'])->name('products.show'); // Model Binding
